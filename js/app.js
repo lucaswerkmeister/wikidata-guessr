@@ -227,6 +227,8 @@ $(document).ready(function() {
                         ?coords wikibase:geoLongitude ?lon . 
                         ?coords wikibase:geoGlobe wd:Q2 .
                         ${restriction} 
+                        MINUS { ?item wdt:P31 wd:Q146591. }
+                        MINUS { ?item wdt:P31 wd:Q32099. }
                 } LIMIT 1000
             } 
             SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de". } 
